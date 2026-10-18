@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#f8f3ed">
+  <meta name="description" content="Giovani & Priscila — O Amor, a Família e as Memórias. Uma recordação especial de uma história de amor, amizade e família.">
+
+  <title>Giovani & Priscila | O Amor, a Família e as Memórias</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #f8f4ef;
+      --paper: #fffdf9;
+      --text: #342822;
+      --muted: #88796e;
+      --gold: #b59668;
+      --gold-light: #dfcba9;
+      --rose: #d8b5ac;
+      --dark: #342822;
+      --white: #ffffff;
+      --radius: 18px;
+      --shadow: 0 15px 50px rgba(65, 45, 33, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::selection {
+      background: var(--gold-light);
+      color: var(--dark);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin-top: 13px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      font-weight: 500;
+    }
+
+    .section-heading p {
+      max-width: 540px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    /* NAVEGAÇÃO */
+
+    .topbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      padding: 22px 0;
+      color: white;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.88);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    /* CAPA */
+
+    .hero {
+      position: relative;
+      min-height: 760px;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background: #44352d;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(
+          180deg,
+          rgba(25, 18, 15, 0.50),
+          rgba(25, 18, 15, 0.36) 40%,
+          rgba(25, 18, 15, 0.78)
+        ),
+        url("jo.jpg");
+      background-position: center;
+      background-size: cover;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,0.30);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(850px, calc(100% - 50px));
+      padding: 120px 0 100px;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .hero .eyebrow {
+      color: #f0d9b5;
+    }
+
+    .hero h1 {
+      margin: 25px 0 18px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.1rem, 8.5vw, 6.5rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.46em;
+      font-style: italic;
+      letter-spacing: 0;
+      color: #f0d9b5;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.91);
+      font-size: clamp(0.95rem, 2vw, 1.12rem);
+    }
+
+    .hero-date {
+      margin-top: 28px;
+      color: #f0d9b5;
+      font-size: 0.76rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 13px 23px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition:
+        transform 0.25s,
+        background 0.25s,
+        color 0.25s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-light {
+      background: #fffaf3;
+      color: var(--dark);
+    }
+
+    .button-outline {
+      border-color: rgba(255,255,255,0.65);
+      color: white;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .button-outline:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .scroll-note {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.72);
+      font-size: 0.68rem;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* MENSAGEM */
+
+    .intro {
+      background: var(--paper);
+      text-align: center;
+    }
+
+    .intro-inner {
+      max-width: 780px;
+      margin: auto;
+    }
+
+    .decorative-heart {
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 1.8rem;
+    }
+
+    .intro h2 {
+      margin-bottom: 25px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .intro p {
+      margin: 15px auto;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .signature {
+      margin-top: 30px;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      font-style: italic;
+    }
+
+    /* HISTÓRIA */
+
+    .story {
+      background: var(--background);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+      padding: 0 20px 20px 0;
+    }
+
+    .story-image::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 70%;
+      height: 70%;
+      border: 1px solid var(--gold-light);
+      z-index: 0;
+    }
+
+    .story-image img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: var(--shadow);
+      background: #e7ddd2;
+    }
+
+    .story-copy h2 {
+      margin: 14px 0 20px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.17;
+    }
+
+    .story-copy p {
+      margin: 15px 0;
+      color: var(--muted);
+    }
+
+    .story-quote {
+      margin-top: 26px;
+      padding-left: 20px;
+      border-left: 2px solid var(--gold);
+      color: var(--text);
+      font-family: "Playfair Display", serif;
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+
+    /* FOTOGRAFIAS DO PASSADO */
+
+    .memories {
+      background: #eee4d9;
+    }
+
+    .memory-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .memory-card {
+      position: relative;
+      overflow: hidden;
+      background: #e1d3c4;
+      box-shadow: var(--shadow);
+    }
+
+    .memory-card img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .memory-card:hover img {
+      transform: scale(1.045);
+    }
+
+    .memory-caption {
+      padding: 20px 22px;
+      background: var(--paper);
+    }
+
+    .memory-caption h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .memory-caption p {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+    .memories-note {
+      max-width: 650px;
+      margin: 35px auto 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* FAMÍLIA */
+
+    .family {
+      background: var(--paper);
+    }
+
+    .family-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .family-card {
+      overflow: hidden;
+      background: var(--background);
+      box-shadow: var(--shadow);
+    }
+
+    .family-card img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      background: #e7ddd2;
+      transition: transform 0.7s;
+    }
+
+    .family-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .family-card .family-text {
+      padding: 27px;
+      text-align: center;
+    }
+
+    .family-card .eyebrow {
+      font-size: 0.65rem;
+    }
+
+    .family-card h3 {
+      margin: 8px 0;
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .family-card p {
+      max-width: 390px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* GALERIA */
+
+    .gallery {
+      background: var(--background);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-rows: 225px;
+      gap: 13px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border: 0;
+      padding: 0;
+      background: #e5d8ca;
+      cursor: pointer;
+      isolation: isolate;
+    }
+
+    .gallery-item:nth-child(6n + 1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(6n + 4) {
+      grid-column: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.65s ease;
+    }
+
+    .gallery-item::after {
+      content: "Ver fotografia";
+      position: absolute;
+      inset: auto 0 0;
+      padding: 35px 15px 15px;
+      background: linear-gradient(transparent, rgba(30,20,15,0.65));
+      color: white;
+      font-size: 0.8rem;
+      text-align: left;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    .gallery-item:hover::after,
+    .gallery-item:focus-visible::after {
+      opacity: 1;
+    }
+
+    .gallery-hint {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    /* MENSAGEM FINAL */
+
+    .closing {
+      position: relative;
+      padding: 110px 20px;
+      background: #44352d;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .closing::before,
+    .closing::after {
+      content: "♡";
+      position: absolute;
+      color: rgba(255,255,255,0.06);
+      font-family: "Playfair Display", serif;
+      font-size: 18rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .closing::before {
+      top: -40px;
+      left: -30px;
+    }
+
+    .closing::after {
+      right: -30px;
+      bottom: -80px;
+    }
+
+    .closing-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .closing h2 {
+      margin: 15px 0 25px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.3rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .closing p {
+      margin: 15px auto;
+      color: rgba(255,255,255,0.82);
+      font-size: 1rem;
+    }
+
+    .closing .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .closing-signature {
+      margin-top: 32px;
+      color: #f0d9b5;
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      padding: 28px 20px;
+      background: #30251f;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    footer .footer-names {
+      margin-bottom: 5px;
+      color: white;
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+    }
+
+    /* CONTROLO DE MÚSICA */
+
+    .music-control {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: calc(100% - 40px);
+      padding: 12px 17px;
+      border: 1px solid rgba(181,150,104,0.35);
+      border-radius: 50px;
+      background: rgba(255,253,249,0.96);
+      color: var(--text);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+    }
+
+    .music-icon {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      place-items: center;
+      border-radius: 50%;
+      background: #eee4d9;
+      color: var(--dark);
+    }
+
+    .music-label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.3;
+    }
+
+    .music-label strong {
+      font-size: 0.77rem;
+    }
+
+    .music-label small {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.66rem;
+    }
+
+    /* VISUALIZADOR DE FOTOGRAFIAS */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: rgba(25,18,15,0.94);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: min(100%, 1100px);
+      max-height: 82vh;
+      object-fit: contain;
+      box-shadow: 0 15px 60px rgba(0,0,0,0.25);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255,255,255,0.45);
+      border-radius: 50%;
+      background: transparent;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      left: 20px;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* ANIMAÇÕES */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVIDADE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 13px;
+        font-size: 0.75rem;
+      }
+
+      .story-grid {
+        gap: 35px;
+      }
+
+      .story-image img {
+        height: 410px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: 190px;
+      }
+
+      .family-card img {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .topbar {
+        padding: 17px 0;
+      }
+
+      .brand {
+        font-size: 1.1rem;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 0.68rem;
+      }
+
+      .nav-links a:nth-child(2) {
+        display: none;
+      }
+
+      .hero {
+        min-height: 760px;
+        min-height: 100svh;
+      }
+
+      .hero::after {
+        inset: 10px;
+      }
+
+      .hero-content {
+        width: calc(100% - 38px);
+        padding-top: 110px;
+        padding-bottom: 100px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4.2rem);
+      }
+
+      .hero-description {
+        font-size: 0.92rem;
+      }
+
+      .hero-actions {
+        gap: 10px;
+      }
+
+      .button {
+        min-height: 45px;
+        padding: 12px 17px;
+        font-size: 0.8rem;
+      }
+
+      .scroll-note {
+        bottom: 23px;
+        font-size: 0.61rem;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .story-image {
+        max-width: 460px;
+        margin: auto;
+      }
+
+      .story-image img {
+        height: 430px;
+      }
+
+      .story-copy h2 {
+        font-size: 2.6rem;
+      }
+
+      .memory-pair,
+      .family-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .memory-card img {
+        height: 330px;
+      }
+
+      .family-card img {
+        height: 380px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 155px;
+        gap: 8px;
+      }
+
+      .gallery-item:nth-child(6n + 1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .gallery-item:nth-child(6n + 4) {
+        grid-column: span 1;
+      }
+
+      .closing {
+        padding: 85px 22px;
+      }
+
+      .closing::before,
+      .closing::after {
+        font-size: 11rem;
+      }
+
+      .music-control {
+        right: 12px;
+        bottom: 12px;
+        gap: 8px;
+        padding: 9px 12px;
+      }
+
+      .music-icon {
+        width: 27px;
+        height: 27px;
+      }
+
+      .music-label strong {
+        font-size: 0.7rem;
+      }
+
+      .music-label small {
+        font-size: 0.61rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVEGAÇÃO -->
+
+  <header class="topbar">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#inicio">G & P</a>
+
+      <div class="nav-links">
+        <a href="#historia">A história</a>
+        <a href="#familia">A família</a>
+        <a href="#galeria">Memórias</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- CAPA PRINCIPAL -->
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+
+        <p class="eyebrow">Uma recordação feita com amizade</p>
+
+        <h1>
+          Giovani & Priscila
+          <span>O Amor, a Família e as Memórias</span>
+        </h1>
+
+        <p class="hero-description">
+          Algumas histórias são tão especiais que merecem ser guardadas
+          para sempre. Esta é uma pequena homenagem à vossa história,
+          à vossa família e a todos os momentos que vos trouxeram até aqui.
+        </p>
+
+        <p class="hero-date">
+          Uma vida de amor · Uma família · Muitas memórias
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-light" href="#historia">
+            Recordar a nossa história
+          </a>
+
+          <button class="button button-outline" id="heroMusicButton" type="button">
+            ♫ Ouvir a nossa música
+          </button>
+        </div>
+
+      </div>
+
+      <div class="scroll-note">Uma história que continua a ser escrita ↓</div>
+    </section>
+
+    <!-- MENSAGEM DE ABERTURA -->
+
+    <section class="section intro">
+      <div class="container intro-inner reveal">
+
+        <div class="decorative-heart">♡</div>
+
+        <p class="eyebrow">Para Giovani e Priscila</p>
+
+        <h2>
+          O tempo passa.<br>
+          As memórias ficam.
+        </h2>
+
+        <p>
+          Há momentos que o tempo nunca consegue apagar: um olhar,
+          um sorriso, uma promessa e a decisão de caminhar lado a lado.
+        </p>
+
+        <p>
+          Hoje é mais uma oportunidade para celebrar aquilo que construíram,
+          recordar os primeiros capítulos da vossa história e reconhecer
+          a beleza da família que nasceu desse amor.
+        </p>
+
+        <p>
+          Esta página é uma pequena lembrança de amizade, preparada
+          especialmente para vocês. Que cada fotografia vos faça sorrir
+          e vos recorde que as melhores histórias continuam a ser escritas
+          todos os dias.
+        </p>
+
+        <div class="signature">Com carinho e amizade.</div>
+
+      </div>
+    </section>
+
+    <!-- A HISTÓRIA DO CASAL -->
+
+    <section class="section story" id="historia">
+      <div class="container story-grid">
+
+        <div class="story-image reveal">
+          <img
+            src="jo.jpg"
+            alt="Giovani e Priscila no dia do casamento"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="story-copy reveal">
+
+          <p class="eyebrow">O dia que ficou para sempre</p>
+
+          <h2>
+            Dois corações.<br>
+            Uma escolha.<br>
+            Uma história.
+          </h2>
+
+          <p>
+            Existe algo de especial no dia em que duas pessoas decidem
+            partilhar a vida. Não é apenas uma celebração: é o início
+            de uma caminhada feita de sonhos, desafios, descobertas
+            e pequenas alegrias.
+          </p>
+
+          <p>
+            Giovani e Priscila, o vosso casamento representa um capítulo
+            importante de uma história que continua a crescer.
+            Cada ano acrescenta novas recordações, novas aprendizagens
+            e novas razões para agradecer.
+          </p>
+
+          <div class="story-quote">
+            "O amor não vive apenas nos grandes momentos.
+            Também vive em todos os dias que escolhemos partilhar."
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RECORDAR O PASSADO -->
+
+    <section class="section memories" id="passado">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <p class="eyebrow">Onde tudo ganhou forma</p>
+
+          <h2>Recordações que contam histórias</h2>
+
+          <p>
+            Antes de todas as fotografias de hoje, existiram momentos
+            que ajudaram a construir a vossa história. Recordar o passado
+            é também celebrar o caminho percorrido.
+          </p>
+        </div>
+
+        <div class="memory-pair">
+
+          <article class="memory-card reveal">
+            <img
+              src="1.jpg"
+              alt="Recordação de Giovani e Priscila"
+              loading="lazy"
+            >
+
+            <div class="memory-caption">
+              <h3>Os primeiros capítulos</h3>
+              <p>
+                Cada lembrança guarda uma parte da história que vos une.
+              </p>
+            </div>
+          </article>
+
+          <article class="memory-card reveal">
+            <img
+              src="2.jpg"
+              alt="Outra recordação especial do casal"
+              loading="lazy"
+            >
+
+            <div class="memory-caption">
+              <h3>Momentos
